@@ -9,8 +9,12 @@ Jeapie sdk for ios
 4. Add a couple of lines in AppDelegate.m :
 
 ```objectivec
+#import "AppDelegate.h"
+
 //import jeapie sdk
 #import "Jeapie.h"
+
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
