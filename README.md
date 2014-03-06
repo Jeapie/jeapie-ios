@@ -4,7 +4,7 @@ jeapie-ios
 Jeapie sdk for ios
 
 1. You must register in service Jeapie https://app.jeapie.com/register
-2. Copy your app_key and app_secret in Settings -> Api keys
+2. Copy your app_key and app_secret from Settings -> Api keys
 3. Copy files from folder "sdk" into your mobile project
 4. Add a couple of lines in AppDelegate.m :
 
