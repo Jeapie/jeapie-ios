@@ -18,4 +18,12 @@
 
 +(void)tags:(NSArray *)tags;
 
++(void)addTag:(NSString *)tag;
+
++(void)removeTag:(NSString *)tag;
+
++(void)removeTags;
+
++(void)alias:(NSString *)alias;
+
 @end
