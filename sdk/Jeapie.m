@@ -168,6 +168,26 @@ static UIBackgroundTaskIdentifier backgroundTaskIdentifier_;
     [Jeapie addEntity:@{ @"tags" : tags }];
 }
 
++(void)addTag:(NSString *)tag
+{
+    [Jeapie addEntity:@{ @"add_tag": tag}];
+}
+
++(void)removeTag:(NSString *)tag
+{
+    [Jeapie addEntity:@{ @"remove_tag": tag}];
+}
+
++(void)removeTags
+{
+    [Jeapie addEntity:@{ @"remove_tags": @"true"}];
+}
+
++(void)alias:(NSString *)alias
+{
+    [Jeapie addEntity:@{ @"alias": alias}];
+}
+
 #pragma mark - System notifications
 
 +(void)applicationDidBecomeActive:(NSNotification *)notification
