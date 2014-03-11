@@ -1,7 +1,7 @@
 jeapie-ios
 ==========
 
-Jeapie sdk for ios
+#### Instructions for install Jeapie sdk
 
 1. You must register in service Jeapie https://app.jeapie.com/register
 2. Copy your app_key and app_secret from Settings -> Api keys
@@ -42,4 +42,27 @@ Jeapie sdk for ios
 {
     [Jeapie didReceiveRemoteNotification:userInfo];
 }
+```
+
+#### Other commands
+1) Set device alias
+```objectivec
+[Jeapie alias:@"test@jeapie.com"];
+```
+2) Set array of tags
+```objectivec
+NSArray *tagsArray = [NSArray arrayWithObjects:@"test", @"test2", @"apple", nil];
+[Jeapie tags:tagsArray];
+```
+3) Add tag to set
+```objectivec
+[Jeapie addTag:@"new tag"];
+```
+4) Remove tag from set
+```objectivec
+[Jeapie removeTag:@"test2"];
+```
+5) Remove all tags
+```objectivec
+[Jeapie removeTags];
 ```
