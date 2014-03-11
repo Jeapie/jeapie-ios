@@ -90,9 +90,6 @@ static UIBackgroundTaskIdentifier backgroundTaskIdentifier_;
     [notificationCenter addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     [notificationCenter addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
-    // open event
-    [Jeapie addEntity:@{ @"type" : @"open", @"time" : [Jeapie currentTime] }];
-    
     // remote notifications
     NSDictionary* userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (userInfo)
@@ -103,8 +100,7 @@ static UIBackgroundTaskIdentifier backgroundTaskIdentifier_;
 
 +(void)didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
-    NSString *m_id = apsInfo[@"m_id"];
+    NSDictionary *m_id = [userInfo objectForKey:@"m_id"];
     if (m_id != nil)
         [Jeapie addEntity:@{ @"type" : @"push", @"m_id" : m_id, @"time" : [Jeapie currentTime] }];
 }
@@ -178,6 +174,9 @@ static UIBackgroundTaskIdentifier backgroundTaskIdentifier_;
 {
     [Jeapie startAutoSendTimer];
     sessionStart_ = [NSDate date];
+    
+    // open event
+    [Jeapie addEntity:@{ @"type" : @"open", @"time" : [Jeapie currentTime] }];
 }
 
 +(void)applicationWillResignActive:(NSNotification *)notification
@@ -198,7 +197,7 @@ static UIBackgroundTaskIdentifier backgroundTaskIdentifier_;
         [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskIdentifier_];
         backgroundTaskIdentifier_ = UIBackgroundTaskInvalid;
     }];
-
+    
     [Jeapie sendQueue];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -282,7 +281,7 @@ static UIBackgroundTaskIdentifier backgroundTaskIdentifier_;
     [deviceInfo setValue:@"iOS" forKey:@"os"];
     [deviceInfo setValue:@"Apple" forKey:@"manufacturer"];
     [deviceInfo setValue:[device model] forKey:@"model"];
-//    [deviceInfo setValue:[device localizedModel] forKey:@"mp_device_model"];
+    //    [deviceInfo setValue:[device localizedModel] forKey:@"mp_device_model"];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     [deviceInfo setValue:[NSNumber numberWithFloat:screenRect.size.height] forKey:@"screen_height"];
     [deviceInfo setValue:[NSNumber numberWithFloat:screenRect.size.width] forKey:@"screen_width"];
@@ -538,5 +537,3 @@ char *Base64Encode(const void *buffer, size_t length, bool separateLines, size_t
 }
 
 @end
-
-
