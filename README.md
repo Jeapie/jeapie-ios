@@ -18,8 +18,11 @@ jeapie-ios
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //start jeapie
-    [Jeapie startSessionWithKey:@"APP_KEY" secret:@"APP_SECRET" launchOptions:launchOptions];
+    //start jeapie with landings
+    [Jeapie startSessionWithKey:@"APP_KEY"  secret:@"APP_SECRET" needLandings:YES launchOptions:launchOptions];
+    
+    //Enable Geolocation
+    [Jeapie enableGeolocation];
 
     // enable push notifications
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(
