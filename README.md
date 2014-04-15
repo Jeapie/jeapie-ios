@@ -6,6 +6,8 @@ jeapie-ios
 1. You must register in service Jeapie https://app.jeapie.com/register
 2. Copy your app_key and app_secret from Settings -> Api keys
 3. Copy files from folder "sdk" into your mobile project
+4. Add lib and frameworks to project (Project -> General -> Linked Frameworks and Libraries)
+![alt text](http://content.screencast.com/users/skiff223/folders/Jing/media/53b6f32b-86fe-4830-bd1b-cdb63d9ba906/00000031.png "Linked Frameworks and Libraries")
 4. Add a couple of lines in AppDelegate.m :
 
 ```objectivec
@@ -46,6 +48,20 @@ jeapie-ios
     [Jeapie didReceiveRemoteNotification:userInfo];
 }
 ```
+
+6.. For show landings
+
+```objectivec
+[Jeapie showLandingWithDelegate:<JeapieDelegate>];
+```
+7.. For show fixed landings
+
+```objectivec
+[Jeapie showFixedLanding:@"FIXED_LANDING_ID" withDelegate:<JeapieDelegate>];
+```
+(Detail in Jeapie docs)
+
+
 
 #### Other commands
 1) Set device alias
