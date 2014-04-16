@@ -49,12 +49,22 @@ jeapie-ios
 }
 ```
 
-6.. For show landings
+6.. For register in-app purchases
+
+```objectivec
+[Jeapie registerInAppPurchaseWithProduct:product];
+```
+or
+```objectivec
+[Jeapie registerInAppPurchaseWithIdentifier:identifier price:price currency:currency];
+```
+
+7.. For show landings
 
 ```objectivec
 [Jeapie showLandingWithDelegate:<JeapieDelegate>];
 ```
-7.. For show fixed landings
+8.. For show fixed landings
 
 ```objectivec
 [Jeapie showFixedLanding:@"FIXED_LANDING_ID" withDelegate:<JeapieDelegate>];
