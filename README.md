@@ -8,6 +8,8 @@ jeapie-ios
 3. Copy files from folder "sdk" into your mobile project
 4. Add lib and frameworks to project (Project -> General -> Linked Frameworks and Libraries)
 ![alt text](http://content.screencast.com/users/skiff223/folders/Jing/media/53b6f32b-86fe-4830-bd1b-cdb63d9ba906/00000031.png "Linked Frameworks and Libraries")
+4. Add "-ObjC" linker flag to "Other Linker Flags" in Build Settings
+![alt text](http://content.screencast.com/users/skiff223/folders/Jing/media/4ed05e39-c539-4971-8c07-6bdda7d4d9b8/00000033.png "Other Linker Flags")
 4. Add a couple of lines in AppDelegate.m :
 
 ```objectivec
