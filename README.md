@@ -16,6 +16,8 @@ jeapie-ios
 * You have to visit in Developer center [Certificates, Identifiers & Profiles] (https://developer.apple.com/account/ios/certificate/certificateList.action) and create certificates
 * Convert your certificates to *.pem format
 
+> For more detailed information visit [Generate .pem file Used to setup Apple PUSH Notification](http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification)
+
 #### Second part (Create account in Jeapie)
 
 * You should register in Jeapie service  https://app.jeapie.com/register
