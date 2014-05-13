@@ -1,16 +1,42 @@
 jeapie-ios
 ==========
 
-#### Instructions for install Jeapie sdk
+> <b>WARNING!</b> Jeapie sdk is only for <b>iPhone version 6+</b>
 
-1. You must register in service Jeapie https://app.jeapie.com/register
-2. Copy your app_key and app_secret from Settings -> Api keys
-3. Copy files from folder "sdk" into your mobile project
-4. Add lib and frameworks to project (Project -> General -> Linked Frameworks and Libraries)
+#### Installation instructions for Jeapie sdk
+
+> Please, before you install sdk make sure that you are familiar with documentation about iPhone push notifications:
+>  [Apple Push Notification Service] (https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)
+>
+> Also you need to understand the basics of <b>Objective-c</b> programming language and <b>iPhone</b> mobile development
+
+---
+
+#### First part (Get push notification certificates)
+* You have to visit in Developer center [Certificates, Identifiers & Profiles] (https://developer.apple.com/account/ios/certificate/certificateList.action) and create certificates
+* Convert your certificates to *.pem formats
+
+#### Second part (Create account in Jeapie)
+
+* You should register in Jeapie service  https://app.jeapie.com/register
+* Copy your <b>APP_KEY</b> and <b>APP_SECRET</b> from Settings -> Api keys (In Jeapie Dashboard)
+* Copy sdk dir from github to your iPhone project
+* In Jeapie dashboard -> Settings -> Push settings you need uploud your certificates
+
+> <b>Warning!</b> If you create in Jeapie dashboard app with <b>"development"</b> <i>production status</i> you have to upload <b>test</b> push notifications certificate.<br>
+> If you create in Jeapie dashboard app with <b>"production"</b> <i>production status</i> you have to upload   <b>producation</b> push notifications certificate.
+>
+> Otherwise, push notifications will not be sent
+
+
+#### Third part (Setting Jeapie in iPhone project)
+
+
+* Add lib and frameworks to project (Project -> General -> Linked Frameworks and Libraries)
 ![alt text](http://content.screencast.com/users/skiff223/folders/Jing/media/53b6f32b-86fe-4830-bd1b-cdb63d9ba906/00000031.png "Linked Frameworks and Libraries")
-4. Add "-ObjC" linker flag to "Other Linker Flags" in Build Settings
+* Add "-ObjC" linker flag to "Other Linker Flags" in Build Settings
 ![alt text](http://content.screencast.com/users/skiff223/folders/Jing/media/4ed05e39-c539-4971-8c07-6bdda7d4d9b8/00000033.png "Other Linker Flags")
-4. Add a couple of lines in AppDelegate.m :
+* Add a couple of lines in AppDelegate.m :
 
 ```objectivec
 #import "AppDelegate.h"
@@ -22,10 +48,11 @@ jeapie-ios
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //start jeapie with landings
+    // Init Jeapie
+    // Replace APP_KEY, APP_SECRET on your value
     [Jeapie startSessionWithKey:@"APP_KEY"  secret:@"APP_SECRET" needLandings:YES launchOptions:launchOptions];
     
-    //Enable Geolocation
+    //Enable indexing Geolocation (works only if your have geolocation permissions!)
     [Jeapie enableGeolocation];
 
     // enable push notifications
@@ -51,7 +78,7 @@ jeapie-ios
 }
 ```
 
-7.. For register in-app purchases
+* For register in-app purchases
 
 ```objectivec
 [Jeapie registerInAppPurchaseWithProduct:product];
@@ -61,39 +88,37 @@ or
 [Jeapie registerInAppPurchaseWithIdentifier:identifier price:price currency:currency];
 ```
 
-8.. For show landings
+* For show landings (in development)
 
 ```objectivec
 [Jeapie showLandingWithDelegate:<JeapieDelegate>];
 ```
-9.. For show fixed landings
+* For show fixed landings (in development
 
 ```objectivec
 [Jeapie showFixedLanding:@"FIXED_LANDING_ID" withDelegate:<JeapieDelegate>];
 ```
-(Detail in Jeapie docs)
-
 
 
 #### Other commands
-1) Set device alias
+* Set device alias
 ```objectivec
 [Jeapie alias:@"test@jeapie.com"];
 ```
-2) Set array of tags
+* Set array of tags
 ```objectivec
 NSArray *tagsArray = [NSArray arrayWithObjects:@"test", @"test2", @"apple", nil];
 [Jeapie tags:tagsArray];
 ```
-3) Add tag to set
+* Add tag to set
 ```objectivec
 [Jeapie addTag:@"new tag"];
 ```
-4) Remove tag from set
+* Remove tag from set
 ```objectivec
 [Jeapie removeTag:@"test2"];
 ```
-5) Remove all tags
+* Remove all tags
 ```objectivec
 [Jeapie removeTags];
 ```
