@@ -1,7 +1,7 @@
 jeapie-ios
 ==========
 
-> <b>WARNING!</b> Jeapie sdk is only for <b>iPhone version 6+</b>
+> <b>WARNING!</b> Jeapie sdk is only for <b>iOs version 6+</b>
 
 #### Installation instructions for Jeapie sdk
 
