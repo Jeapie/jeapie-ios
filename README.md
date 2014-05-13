@@ -1,11 +1,11 @@
 jeapie-ios
 ==========
 
-> <b>WARNING!</b> Jeapie sdk is only for <b>iOs version 6+</b>
+> <b>WARNING!</b> Jeapie sdk is only for <b>iOS version 6+</b>
 
 #### Installation instructions for Jeapie sdk
 
-> Please, before you install sdk make sure that you are familiar with documentation about iPhone push notifications:
+> Please, make sure that you are familiar with documentation about iPhone push notifications:
 >  [Apple Push Notification Service] (https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)
 >
 > Also you need to understand the basics of <b>Objective-c</b> programming language and <b>iPhone</b> mobile development
@@ -14,19 +14,19 @@ jeapie-ios
 
 #### First part (Get push notification certificates)
 * You have to visit in Developer center [Certificates, Identifiers & Profiles] (https://developer.apple.com/account/ios/certificate/certificateList.action) and create certificates
-* Convert your certificates to *.pem formats
+* Convert your certificates to *.pem format
 
 #### Second part (Create account in Jeapie)
 
 * You should register in Jeapie service  https://app.jeapie.com/register
 * Copy your <b>APP_KEY</b> and <b>APP_SECRET</b> from Settings -> Api keys (In Jeapie Dashboard)
-* Copy sdk dir from github to your iPhone project
+* Copy SDK dir from GitHub to your iPhone project
 * In Jeapie dashboard -> Settings -> Push settings you need uploud your certificates
 
-> <b>Warning!</b> If you create in Jeapie dashboard app with <b>"development"</b> <i>production status</i> you have to upload <b>test</b> push notifications certificate.<br>
-> If you create in Jeapie dashboard app with <b>"production"</b> <i>production status</i> you have to upload   <b>producation</b> push notifications certificate.
+> <b>Warning!</b> If you create an app with <b>"development"</b> <i>production status</i> (in Jeapie dashboard ) you have to upload <b>test</b> push notifications certificate.<br>
+> If you create an app with <b>"production"</b> <i>production status</i> you have to upload   <b>producation</b> push notifications certificate.
 >
-> Otherwise, push notifications will not be sent
+> Otherwise, push notifications will not be delivered
 
 
 #### Third part (Setting Jeapie in iPhone project)
@@ -78,7 +78,7 @@ jeapie-ios
 }
 ```
 
-* For register in-app purchases
+* For tracking in-app purchases, user ltv and more.
 
 ```objectivec
 [Jeapie registerInAppPurchaseWithProduct:product];
@@ -88,12 +88,12 @@ or
 [Jeapie registerInAppPurchaseWithIdentifier:identifier price:price currency:currency];
 ```
 
-* For show landings (in development)
+* For show landing pages and HTML5 in-app messages (in development)
 
 ```objectivec
 [Jeapie showLandingWithDelegate:<JeapieDelegate>];
 ```
-* For show fixed landings (in development
+* For show fixed landing pages and banners (in development)
 
 ```objectivec
 [Jeapie showFixedLanding:@"FIXED_LANDING_ID" withDelegate:<JeapieDelegate>];
