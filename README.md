@@ -23,7 +23,7 @@ jeapie-ios
 * You should register in Jeapie service  https://app.jeapie.com/register
 * Copy your <b>APP_KEY</b> and <b>APP_SECRET</b> from Settings -> Api keys (In Jeapie Dashboard)
 * Copy SDK dir from GitHub to your iPhone project
-* In Jeapie dashboard -> Settings -> Push settings you need uploud your certificates
+* In Jeapie dashboard -> Settings -> Push settings you need upload your certificates
 
 > <b>Warning!</b> If you create an app with <b>"development"</b> <i>production status</i> (in Jeapie dashboard ) you have to upload <b>test</b> push notifications certificate.<br>
 > If you create an app with <b>"production"</b> <i>production status</i> you have to upload   <b>producation</b> push notifications certificate.
