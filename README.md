@@ -13,7 +13,7 @@ jeapie-ios
 ---
 
 #### First part (Get push notification certificates)
-* You have to visit in Developer center [Certificates, Identifiers & Profiles] (https://developer.apple.com/account/ios/certificate/certificateList.action) and create certificates
+* You have to visit the Developer center [Certificates, Identifiers & Profiles] (https://developer.apple.com/account/ios/certificate/certificateList.action) and create certificates
 * Convert your certificates to *.pem format
 
 > For more detailed information visit [Generate .pem file Used to setup Apple PUSH Notification](http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification)
@@ -90,7 +90,7 @@ or
 [Jeapie registerInAppPurchaseWithIdentifier:identifier price:price currency:currency];
 ```
 
-* For show landing pages and HTML5 in-app messages (in development)
+* To show landing pages and HTML5 in-app messages (in development)
 
 ```objectivec
 [Jeapie showLandingWithDelegate:<JeapieDelegate>];
