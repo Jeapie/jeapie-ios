@@ -22,6 +22,7 @@ typedef void (^JBEventsHandler)(NSString *event, id json);
 - (void)setAlias:(NSString *)alias;
 - (void)setPhone:(NSString *)phone;
 - (void)setEmail:(NSString *)email;
+- (void)setTags:(NSArray *)tags;
 - (void)addTag:(NSString *)tag;
 - (void)setLocation:(NSArray *)coordinates;
 - (void)removeTag:(NSString *)tag;
