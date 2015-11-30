@@ -10,4 +10,4 @@ jeapie-ios
 >
 > Also you need to understand the basics of <b>Objective-c</b> programming language and <b>iPhone</b> mobile development
 
-Current version sdk in development.
+Go to Jeapie Docs [http://docs.jeapie.com/iOS/iOS-Native-SDK-Installation/](http://docs.jeapie.com/iOS/iOS-Native-SDK-Installation/)
